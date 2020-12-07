@@ -25,6 +25,6 @@ Route::get('contact','FrontendController@contact')->name('contactpage');
 Route::get('dashboard','BackendController@dashboard')->name('dashboard');
 // CRUD
 Route::resource('categories', 'CategoryController'); // 7
-// Route::resource('subcategories', 'SubcategoryController'); // 7
+Route::resource('subcategories', 'SubcategoryController'); // 7
 // Route::resource('brands', 'BrandController'); // 7
 // Route::resource('items', 'ItemController'); // 7

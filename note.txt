@@ -59,3 +59,13 @@ Terminal Commands
       - Detail -1 (display only one)
     - Update -2 (form, edit)
     - Delete -1 (delete)
+
+
+Clone Laravel Project From Git
+------------------------------
+
+- git clone url
+- cd folder
+- copy .env.example .env
+- composer install
+- php artisan key:generate
