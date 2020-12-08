@@ -21,6 +21,10 @@
     <link rel="stylesheet" type="text/css" href="{{asset('backend_assets/css/main.css')}}">
     <!-- Font-icon css-->
     <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    {{-- Summernote --}}
+    <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.css" rel="stylesheet">
+    
   </head>
   <body class="app sidebar-mini">
     <!-- Navbar-->
@@ -201,6 +205,14 @@
         ga('create', 'UA-72504830-1', 'auto');
         ga('send', 'pageview');
       }
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.js"></script>
+    <script>
+      $('.summernote').summernote({
+        placeholder: 'Hello Bootstrap 4',
+        tabsize: 2,
+        height: 100
+      });
     </script>
     @yield('script')
   </body>

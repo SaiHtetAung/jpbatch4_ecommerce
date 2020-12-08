@@ -14,10 +14,6 @@
     <div class="row">
       <div class="col-md-12">
         <h2>Category Show UI</h2>
-
-        <img src="{{$category->photo}}" class="img-fluid">
-
-        <p>{{$category->name}}</p>
       </div>
     </div>
   </main>

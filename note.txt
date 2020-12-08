@@ -64,9 +64,36 @@ Terminal Commands
 
 Clone Laravel Project From Git
 ------------------------------
-
 - git clone url
 - cd folder
 - copy .env.example .env
 - composer install
 - php artisan key:generate
+
+8 Dec 2020
+----------
+  - In item index
+    - codeno, name, price(discount) use number format, buttons (detail, edit, delete) 
+  - item show blade ui
+  - In item edit form
+      - select option -> auto selected
+      - item code readonly
+  - Summernote in description (create, edit)
+  - Multi File Upload
+
+Auth
+----
+  - composer require laravel/ui:^2.4
+  - php artisan ui bootstrap --auth
+  - node js install
+  - npm install
+  - npm run dev
+  - read docs
+
+Frontend UI (html)
+-----------
+  - home (item တွေပြဖို့)
+  - cart 
+  - item detail page
+  - profile
+  - order history
