@@ -61,3 +61,12 @@ Terminal Commands
 
   - Upload File
     - php artisan storage:link
+
+Clone Laravel Project From Git
+------------------------------
+
+- git clone url
+- cd folder
+- copy .env.example .env
+- composer install
+- php artisan key:generate
