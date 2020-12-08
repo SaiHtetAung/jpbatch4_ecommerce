@@ -52,10 +52,12 @@ Terminal Commands
   - php artisan make:controller BrandController --resource --model=Brand (resource controller related model)
   - php artisan migrate:fresh (drop all tables and migrate again)
 
-
   - CRUD
     - Create -2 (form, save)
     - Retrieve -1 (display all list)
       - Detail -1 (display only one)
     - Update -2 (form, edit)
     - Delete -1 (delete)
+
+  - Upload File
+    - php artisan storage:link
