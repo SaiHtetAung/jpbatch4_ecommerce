@@ -17,17 +17,19 @@ Route::get('/','FrontendController@home')->name('homepage');
 
 Route::get('about','FrontendController@about')->name('aboutpage');
 
-Route::get('post','FrontendController@post')->name('postpage');
+Route::get('post/{id}','FrontendController@post')->name('postpage');
 
 Route::get('contact','FrontendController@contact')->name('contactpage');
 
-// Backend
-Route::get('dashboard','BackendController@dashboard')->name('dashboard');
-// CRUD
-Route::resource('categories', 'CategoryController'); // 7
-Route::resource('subcategories', 'SubcategoryController'); // 7
-Route::resource('brands', 'BrandController'); // 7
-Route::resource('items', 'ItemController'); // 7
+Route::middleware('role:admin')->group(function () {
+  // Backend
+  Route::get('dashboard','BackendController@dashboard')->name('dashboard');
+  // CRUD
+  Route::resource('categories', 'CategoryController'); // 7
+  Route::resource('subcategories', 'SubcategoryController'); // 7
+  Route::resource('brands', 'BrandController'); // 7
+  Route::resource('items', 'ItemController'); // 7
+});
 
 Auth::routes(['verify' => true]);
 

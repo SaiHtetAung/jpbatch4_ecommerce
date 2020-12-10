@@ -97,3 +97,22 @@ Frontend UI (html)
   - item detail page
   - profile
   - order history
+
+
+Guest
+-----
+http://localhost:8000/
+
+Auth and Customer
+http://localhost:8000/checkout
+
+Auth and Admin
+http://localhost:8000/dashboard
+
+
+10 Dec 2020
+-----------
+  - Role for Auth
+  - middleware
+  - frontend ui with dynamic data
+  - 

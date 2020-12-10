@@ -41,9 +41,9 @@
           <li class="nav-item">
             <a class="nav-link" href="{{route('aboutpage')}}">About</a>
           </li>
-          <li class="nav-item">
+          {{-- <li class="nav-item">
             <a class="nav-link" href="{{route('postpage')}}">Sample Post</a>
-          </li>
+          </li> --}}
           <li class="nav-item">
             <a class="nav-link" href="{{route('contactpage')}}">Contact</a>
           </li>

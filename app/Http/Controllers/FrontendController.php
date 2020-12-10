@@ -3,12 +3,14 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Item;
 
 class FrontendController extends Controller
 {
   public function home($value='')
   {
-    return view('frontend.home');
+    $items = Item::orderBy('id','desc')->get();
+    return view('frontend.home',compact('items'));
   }
 
   public function about($value='')
@@ -16,9 +18,10 @@ class FrontendController extends Controller
     return view('frontend.about');
   }
 
-  public function post($value='')
+  public function post($id)
   {
-    return view('frontend.postdetail');
+    $item = Item::find($id);
+    return view('frontend.postdetail',compact('item'));
   }
 
   public function contact($value='')
