@@ -24,9 +24,9 @@ To Read
 
 Ecommerce Project
 -----------------
-  - Item Manage - 1
-  - User Manage - 2
-  - Order Manage - 3
+  - Item Manage - 1 (done)
+  - User Manage - 2 (done)
+  - Order Manage - 3 
 
   - User Roles
     - customer
@@ -43,7 +43,8 @@ Ecommerce Project
       - categories - 1
       - subcategories - 2
     - users
-    - orders
+    - orders (id, orderno, user_id, orderdate, total, status)
+    - orderdetails (id, item_id, order_id, qty) (pivot)
 
 Terminal Commands
 -----------------
@@ -115,4 +116,13 @@ http://localhost:8000/dashboard
   - Role for Auth
   - middleware
   - frontend ui with dynamic data
+
+11 Dec 2020
+-----------
+  - Localstorage (id,photo,name,price,qty)
+  - getItem('key')
+  - setItem('key',JSON.stringify(value))
+  - [{id:1,photo:path,name:'My Item',price:2000,qty:2},{},{}]
+
+  - cart page
   - 
