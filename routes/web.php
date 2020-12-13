@@ -21,6 +21,8 @@ Route::get('post/{id}','FrontendController@post')->name('postpage');
 
 Route::get('contact','FrontendController@contact')->name('contactpage');
 
+Route::get('cart','FrontendController@cart')->name('cartpage');
+
 Route::middleware('role:admin')->group(function () {
   // Backend
   Route::get('dashboard','BackendController@dashboard')->name('dashboard');
