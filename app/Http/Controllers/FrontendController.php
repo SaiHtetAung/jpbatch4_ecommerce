@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Item;
+use App\Order;
+use Auth;
 
 class FrontendController extends Controller
 {
@@ -32,5 +34,11 @@ class FrontendController extends Controller
   public function cart($value='')
   {
     return view('frontend.cart');
+  }
+
+  public function order_history($value='')
+  {
+    $orders = Order::where('user_id',Auth::id())->get();
+    return view('frontend.order_history',compact('orders'));
   }
 }

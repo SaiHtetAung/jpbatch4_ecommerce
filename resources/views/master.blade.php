@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
   <meta name="author" content="">
-
+  <meta name="csrf-token" content="{{ csrf_token() }}">
   <title>Tech Blog - @yield('title')</title>
 
   <!-- Bootstrap core CSS -->
@@ -38,15 +38,44 @@
           <li class="nav-item">
             <a class="nav-link" href="{{route('homepage')}}">Home</a>
           </li>
-          <li class="nav-item">
+          {{-- <li class="nav-item">
             <a class="nav-link" href="{{route('aboutpage')}}">About</a>
-          </li>
+          </li> --}}
           {{-- <li class="nav-item">
             <a class="nav-link" href="{{route('postpage')}}">Sample Post</a>
           </li> --}}
-          <li class="nav-item">
+         {{--  <li class="nav-item">
             <a class="nav-link" href="{{route('contactpage')}}">Contact</a>
-          </li>
+          </li> --}}
+
+          @guest
+            <li class="nav-item">
+              <a class="nav-link" href="{{route('login')}}">Login</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="{{route('register')}}">Register</a>
+            </li>
+          @else
+            <li class="nav-item dropdown">
+                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                    {{ Auth::user()->name }}
+                </a>
+
+                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                  <a href="{{route('order_history')}}" class="dropdown-item">Order History</a>
+                  <a class="dropdown-item" href="{{ route('logout') }}"
+                     onclick="event.preventDefault();
+                                   document.getElementById('logout-form').submit();">
+                      {{ __('Logout') }}
+                  </a>
+
+                  <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                      @csrf
+                  </form>
+                </div>
+            </li>
+          @endguest
 
           <li class="nav-item">
             <a class="nav-link" href="{{route('cartpage')}}">Cart</a>

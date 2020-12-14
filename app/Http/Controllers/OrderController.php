@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Order;
 use Illuminate\Http\Request;
+use Auth;
 
 class OrderController extends Controller
 {
@@ -35,7 +36,21 @@ class OrderController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // dd($request);
+
+        $order = new Order;
+        $order->codeno = uniqid();
+        $order->orderdate = date('Y-m-d');
+        $order->total = $request->total;
+        $order->user_id = Auth::id();
+        $order->save();
+
+        $ls = json_decode($request->ls); // json string to array
+        foreach ($ls as $row) {
+            $order->items()->attach($row->id,["qty"=>$row->qty]);
+        }
+
+        return 'Order Successful!';
     }
 
     /**

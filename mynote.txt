@@ -1,0 +1,34 @@
+Web Development
+---------------
+  - Frontend
+    - HTML
+    - CSS
+      - material
+      - bootstrap
+    - JS
+      - JQ (Library)
+      - Vue, React, Angular
+
+
+  - Backend
+    - php
+      - CMS (content management system)
+        - Wordpress, Dupal
+
+      - Frameworks
+        - CI
+        - Laravel
+        - Cake
+    - API
+    - Database
+
+- office
+
+Laravel Installation
+--------------------
+composer create-project --prefer-dist laravel/laravel blog 7.x
+
+cd blog
+
+php artisan serve
+

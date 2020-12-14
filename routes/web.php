@@ -23,6 +23,8 @@ Route::get('contact','FrontendController@contact')->name('contactpage');
 
 Route::get('cart','FrontendController@cart')->name('cartpage');
 
+Route::get('order_history', 'FrontendController@order_history')->name('order_history');
+
 Route::middleware('role:admin')->group(function () {
   // Backend
   Route::get('dashboard','BackendController@dashboard')->name('dashboard');
@@ -32,6 +34,9 @@ Route::middleware('role:admin')->group(function () {
   Route::resource('brands', 'BrandController'); // 7
   Route::resource('items', 'ItemController'); // 7
 });
+
+// order management
+Route::resource('orders', 'OrderController');
 
 Auth::routes(['verify' => true]);
 

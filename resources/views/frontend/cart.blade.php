@@ -35,12 +35,38 @@
           <tbody>
           </tbody>
         </table>
-        <a href="#" class="btn btn-info">Continue Shopping</a>
-        <a href="#" class="btn btn-primary">Checkout</a>
+        <a href="{{route('homepage')}}" class="btn btn-info">Continue Shopping</a>
+        @auth
+          <a href="#" class="btn btn-primary checkout">Checkout</a>
+        @else
+          <a href="{{route('login')}}" class="btn btn-primary">Login to Checkout</a>
+        @endauth
       </div>
     </div>
   </div>
 @endsection
 @section('script')
   <script type="text/javascript" src="{{asset('frontend_assets/js/custom.js')}}"></script>
+  <script type="text/javascript">
+    $(document).ready(function () {
+      $.ajaxSetup({
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        }
+      });
+
+      $('.checkout').click(function () {
+        // alert('ok');
+        let ls = localStorage.getItem('cart');
+        let total = JSON.parse(ls).reduce((acc, item) => acc + (item.price*item.qty), 0);
+
+        // console.log(ls);
+        // console.log(total);
+
+        $.post("{{route('orders.store')}}",{ls:ls,total:total},function (response) {
+          console.log(response)
+        })
+      })
+    })
+  </script>
 @endsection
