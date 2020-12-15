@@ -85,7 +85,9 @@ class OrderController extends Controller
      */
     public function update(Request $request, Order $order)
     {
-        //
+        $order->status = 1;
+        $order->save();
+        return redirect()->route('orders.index');
     }
 
     /**
@@ -97,5 +99,13 @@ class OrderController extends Controller
     public function destroy(Order $order)
     {
         //
+    }
+
+    public function confirm($id)
+    {
+        $order = Order::find($id);
+        $order->status = 1;
+        $order->save();
+        return redirect()->route('orders.index');
     }
 }

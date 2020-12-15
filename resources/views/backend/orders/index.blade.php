@@ -37,7 +37,13 @@
                     <td>{{number_format($order->total)}}</td>
                     <td>
                       @if($order->status == 0)
-                        <a href="#" class="btn btn-info btn-sm">Confirm</a>
+                        {{-- <a href="{{route('orders.confirm',$order->id)}}" class="btn btn-info btn-sm" onclick="return confirm('Are You Sure!')">Confirm</a> --}}
+                        <form method="post" action="{{route('orders.update',$order->id)}}" onsubmit="return confirm('Are You Sure!')">
+                          @csrf
+                          @method("PUT")
+
+                          <input type="submit" name="btn-submit" class="btn btn-info btn-sm" value="Confirm">
+                        </form>
                       @else
                         <a href="#" class="btn btn-success btn-sm">Success</a>
                       @endif

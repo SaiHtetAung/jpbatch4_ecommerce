@@ -37,6 +37,7 @@ Route::middleware('role:admin')->group(function () {
 
 // order management
 Route::resource('orders', 'OrderController');
+// Route::get('confirm/{id}', 'OrderController@confirm')->name('orders.confirm');
 
 Auth::routes(['verify' => true]);
 
