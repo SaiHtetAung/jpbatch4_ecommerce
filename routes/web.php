@@ -25,6 +25,8 @@ Route::get('cart','FrontendController@cart')->name('cartpage');
 
 Route::get('order_history', 'FrontendController@order_history')->name('order_history');
 
+Route::get('bycategory/{id}', 'FrontendController@bycategory')->name('bycategory');
+
 Route::middleware('role:admin')->group(function () {
   // Backend
   Route::get('dashboard','BackendController@dashboard')->name('dashboard');

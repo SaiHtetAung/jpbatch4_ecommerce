@@ -35,6 +35,16 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
+          <li class="nav-item dropdown">
+              <a id="myNavbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                  Choose Categories
+              </a>
+
+              <div class="dropdown-menu dropdown-menu-right" aria-labelledby="myNavbarDropdown">
+                <x-category-component></x-category-component>
+              </div>
+          </li>
+
           <li class="nav-item">
             <a class="nav-link" href="{{route('homepage')}}">Home</a>
           </li>

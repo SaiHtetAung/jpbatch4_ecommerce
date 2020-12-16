@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Item;
 use App\Order;
 use Auth;
+use App\Category;
 
 class FrontendController extends Controller
 {
@@ -40,5 +41,11 @@ class FrontendController extends Controller
   {
     $orders = Order::where('user_id',Auth::id())->get();
     return view('frontend.order_history',compact('orders'));
+  }
+
+  public function bycategory($id)
+  {
+    $category = Category::find($id);
+    return view('frontend.bycategory',compact('category'));
   }
 }
