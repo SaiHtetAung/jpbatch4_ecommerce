@@ -27,6 +27,10 @@ Route::get('order_history', 'FrontendController@order_history')->name('order_his
 
 Route::get('bycategory/{id}', 'FrontendController@bycategory')->name('bycategory');
 
+Route::get('eloading', 'FrontendController@eloading')->name('eloading');
+
+Route::get('getItems', 'FrontendController@getItems')->name('getItems');
+
 Route::middleware('role:admin')->group(function () {
   // Backend
   Route::get('dashboard','BackendController@dashboard')->name('dashboard');

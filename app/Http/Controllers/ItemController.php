@@ -14,7 +14,8 @@ class ItemController extends Controller
      */
     public function index()
     {
-        //
+        $items = Item::with('brand')->with('subcategory')->get();
+        dd($items);
     }
 
     /**

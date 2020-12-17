@@ -48,4 +48,15 @@ class FrontendController extends Controller
     $category = Category::find($id);
     return view('frontend.bycategory',compact('category'));
   }
+
+  public function eloading($value='')
+  {
+    return view('frontend.eloading');
+  }
+
+  public function getItems($value='')
+  {
+    $items = Item::with('brand')->with('subcategory.category')->get();
+    return $items;
+  }
 }

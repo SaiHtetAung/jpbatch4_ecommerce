@@ -14,7 +14,13 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        $categories = Category::orderBy('id','desc')->get();
+        // $categories = Category::orderBy('id','desc')->get();
+
+        // dd($categories);
+
+        $category = Category::orderBy('id','desc')->first();
+        dd($category);
+
         return view('backend.categories.index',compact('categories'));
     }
 
